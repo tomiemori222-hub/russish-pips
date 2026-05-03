@@ -1,0 +1,35 @@
+name: Auto-update packages.json
+
+on:
+  push:
+    paths:
+      - '*.ruwhl'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate packages.json
+        run: python generate_packages_json.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages.json
+          if git diff --cached --quiet; then
+            echo "No changes to packages.json"
+          else
+            git commit -m "Автообновление packages.json"
+            git push
+          fi
