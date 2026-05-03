@@ -1,1 +1,26 @@
-{}
+{
+    "runet": {
+        "version": "1.0",
+        "file": "runet.ruwhl",
+        "hash": "1a5a57c7330a265c4b397e53924fc972",
+        "description": "Библиотека runet"
+    },
+    "ruaudio": {
+        "version": "1.0",
+        "file": "ruaudio.ruwhl",
+        "hash": "bdf2cf5ae7861895eadc8c8c3c4f0014",
+        "description": "Библиотека ruaudio"
+    },
+    "rugui": {
+        "version": "1.0",
+        "file": "rugui.ruwhl",
+        "hash": "0a40b53395d33ce3671e5fc01676796b",
+        "description": "Библиотека rugui"
+    },
+    "rucalc": {
+        "version": "1.0",
+        "file": "rucalc.ruwhl",
+        "hash": "6ab2ad2edc30e6d6aef91d315b382c39",
+        "description": "Библиотека rucalc"
+    }
+}
